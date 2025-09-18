@@ -1,10 +1,11 @@
 """Trading agent implementation."""
 
 from dataclasses import dataclass
+from pprint import pprint
 from typing import Any, Dict, List, Optional
 
-from ..core.base import Agent, AgentConfig
-from ..core.exceptions import AgentError
+from agentic_lab.core.base import Agent, AgentConfig
+from agentic_lab.core.exceptions import AgentError
 
 
 @dataclass
@@ -78,3 +79,34 @@ class TradingAgent(Agent):
             "total_value": sum(pos["total_value"] for pos in self.positions.values()),
             "symbols_count": len(self.symbols),
         }
+
+def main() -> None:
+    """Run a demo workflow with the simulated trading agent."""
+    config = TradingConfig(
+        name="demo-trader",
+        description="Sample trading agent run",
+        symbols=["AAPL", "MSFT", "GOOGL"],
+        strategy="demo_strategy",
+        risk_tolerance=0.05,
+    )
+
+    agent = TradingAgent(config)
+
+    try:
+        agent.initialize()
+    except AgentError as exc:
+        print(f"Initialization failed: {exc}")
+        return
+
+    for action, symbol, qty in [("buy", "AAPL", 10), ("sell", "MSFT", 5), ("analyze", "GOOGL", None)]:
+        result = agent.execute(action, symbol, qty)
+        print(f"{result['action'].title()} {result['symbol']} -> {result['status']}")
+
+    summary = agent.get_portfolio_summary()
+    print("Portfolio summary:")
+    pprint(summary)
+    
+
+
+if __name__ == "__main__":
+    main()

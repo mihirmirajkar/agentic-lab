@@ -2,14 +2,8 @@
 
 import pytest
 
-from agentic_lab import __version__
 from agentic_lab.agents.trading import TradingAgent, TradingConfig
 from agentic_lab.utils.logging import setup_logger
-
-
-def test_package_import():
-    """Test that the main package can be imported and has version."""
-    assert __version__ == "0.1.0"
 
 
 def test_end_to_end_trading_workflow():

@@ -2,7 +2,7 @@
 
 import pytest
 
-from agentic_lab.agents.trading import TradingConfig
+from agentic_lab.agents.trader.trading import TradingConfig
 from agentic_lab.core.base import AgentConfig
 
 

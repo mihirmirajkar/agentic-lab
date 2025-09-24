@@ -43,9 +43,9 @@ dev = [
 ]
 trading = [
     # Trading-specific dependencies will be added as needed
-    # "yfinance",
-    # "pandas",
-    # "numpy",
+    "yfinance",
+    "pandas",
+    "numpy",
 ]
 
 [project.urls]

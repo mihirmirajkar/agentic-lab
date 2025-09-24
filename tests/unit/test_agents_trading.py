@@ -2,7 +2,7 @@
 
 import pytest
 
-from agentic_lab.agents.trading import TradingAgent, TradingConfig
+from agentic_lab.agents.trader.trading import TradingAgent, TradingConfig
 from agentic_lab.core.exceptions import AgentError
 
 

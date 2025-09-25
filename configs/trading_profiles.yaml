@@ -1,0 +1,61 @@
+# Trading / research profile configurations
+# Defines how far back the research agent should look based on intended trading frequency.
+# Extend or adjust these profiles as needed.
+profiles:
+  scalping:
+    description: "Ultra short-term trades (minutes to hours); focus on momentum and technical signals"
+    lookback_days: 1
+    max_results: 8
+    risk_tolerance: "aggressive"
+    
+  daily_1:
+    description: "Execute one trade per day; short-term catalysts matter"
+    lookback_days: 5
+    max_results: 12
+    risk_tolerance: "moderate"
+    
+  daily_2:
+    description: "Two trades per day; intraday + short swing focus"
+    lookback_days: 3
+    max_results: 16
+    risk_tolerance: "aggressive"
+    
+  swing_short:
+    description: "Short swing trades (3-10 days); technical + catalyst driven"
+    lookback_days: 10
+    max_results: 14
+    risk_tolerance: "moderate"
+    
+  weekly_1:
+    description: "One trade per week; medium-term narrative & earnings cycle"
+    lookback_days: 21
+    max_results: 18
+    risk_tolerance: "conservative"
+
+      
+  weekly_aggressive:
+    description: "Two to three trades per week; more aggressive stance"
+    lookback_days: 14
+    max_results: 20
+    risk_tolerance: "aggressive"
+    
+  weekly_2:
+    description: "Two trades per week; blend of tactical & narrative"
+    lookback_days: 14
+    max_results: 18
+    risk_tolerance: "moderate"
+    
+  monthly_1:
+    description: "Position trades monthly; emphasize structural & fundamental shifts"
+    lookback_days: 90
+    max_results: 24
+    risk_tolerance: "conservative"
+    
+  quarterly:
+    description: "Long-term position trading; fundamental analysis focus"
+    lookback_days: 180
+    max_results: 30
+    risk_tolerance: "conservative"
+
+# Default profile to use if unspecified
+default_profile: weekly_1

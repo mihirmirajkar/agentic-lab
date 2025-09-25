@@ -30,6 +30,8 @@ classifiers = [
 dependencies = [
     # Core dependencies will be added as needed
     "pytest>=8.4.2",
+    "pyyaml>=6.0.2",
+    "pandas>=2.0.0",  # Required for technical analysis
 ]
 
 [project.optional-dependencies]
@@ -46,6 +48,11 @@ trading = [
     "yfinance",
     "pandas",
     "numpy",
+]
+research = [
+    "ddgs>=9.6.0",
+    # Optional LLM + search dependencies
+    "openai>=1.0.0",
 ]
 
 [project.urls]
